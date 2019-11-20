@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0; /* Sirve para quitar todo el diseño del navegador por default*/
+}
+
+body{
+    background: whitesmoke;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+
+    grid-template-areas: "header header header"
+                        "content content sidebar"
+                        "widget  widget  sidebar"
+                        "footer  footer   footer";/*Sirve para definir areas del enmaquetado ( maneja toda la cuadricula )*/
+
+    
+}
+.contenedor >div,
+.contenedor .header,
+.contenedor .content,
+.contenedor .sidebar,
+.contenedor .widget,
+.contenedor .footer{
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.75);
+}
+
+.contenedor .header{
+    background: rgb(26, 170, 214);
+    color: whitesmoke;
+    text-align: center;
+    grid-area: header;
+}
+.contenedor .content{
+    background: rgb(241, 58, 58);
+    color: whitesmoke;
+    grid-area: content;
+    
+}
+.contenedor .sidebar{
+   background: rgb(250, 112, 62);
+    color: whitesmoke;
+    
+    grid-area: sidebar;
+}
+.contenedor .widget{
+    background: rgb(163, 65, 163);
+    color: whitesmoke;
+    grid-area: widget;
+}
+.contenedor .footer{
+    background: brown;
+    color: whitesmoke;
+    grid-area: footer;
+}
